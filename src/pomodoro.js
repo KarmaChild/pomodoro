@@ -3,9 +3,10 @@ import React,{useState,useEffect} from "react";
 
 const Pomodoro = () => {
 
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(5);
+    const [minutes, setMinutes] = useState(0); // time adjust
+    const [seconds, setSeconds] = useState(5); // time adjust
     const [displayMessage, setDisplayMessage] = useState(false);
+    const [warda,setWarda] = useState(true);
 
     useEffect(() =>{
         let interval = setInterval(()=>{
@@ -16,11 +17,12 @@ const Pomodoro = () => {
                     setSeconds(59);
                     setMinutes(minutes-1);
                 } else{
-                    let minutes = displayMessage ? 24 : 4;
-                    let seconds = 59;
+                    let minutes = displayMessage ? 24 : 0; // time adjust
+                    let seconds = 3; // time adjust
 
                     setSeconds(seconds);
                     setMinutes(minutes);
+                    setWarda(!warda);
                     setDisplayMessage(!displayMessage);
                 }
             }else {
@@ -35,10 +37,10 @@ const Pomodoro = () => {
     const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
     return <div className="pomodoro">
-        <div className="messege">
+        <div className="message">
             {displayMessage && <div>Break time. Next session starts in: </div>}
         </div>
-        <div className="timer">{timerMinutes}:{timerSeconds}</div>
+        <div className="timer">{warda && <div>Shut up Warda</div>}<div>{timerMinutes}:{timerSeconds}</div></div>
     </div>
 }
 
