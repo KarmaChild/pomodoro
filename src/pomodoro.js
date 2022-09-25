@@ -6,7 +6,7 @@ const Pomodoro = () => {
     const [minutes, setMinutes] = useState(0); // time adjust
     const [seconds, setSeconds] = useState(5); // time adjust
     const [displayMessage, setDisplayMessage] = useState(false);
-    const [shutup,SetShutup] = useState(true);
+    const [shutup, setShutup] = useState(true);
 
     useEffect(() =>{
         let interval = setInterval(()=>{
@@ -22,7 +22,7 @@ const Pomodoro = () => {
 
                     setSeconds(seconds);
                     setMinutes(minutes);
-                    setWarda(!warda);
+                    setShutup(!shutup);
                     setDisplayMessage(!displayMessage);
                 }
             }else {
