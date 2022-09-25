@@ -6,7 +6,7 @@ const Pomodoro = () => {
     const [minutes, setMinutes] = useState(0); // time adjust
     const [seconds, setSeconds] = useState(5); // time adjust
     const [displayMessage, setDisplayMessage] = useState(false);
-    const [warda,setWarda] = useState(true);
+    const [shutup,SetShutup] = useState(true);
 
     useEffect(() =>{
         let interval = setInterval(()=>{
@@ -40,7 +40,7 @@ const Pomodoro = () => {
         <div className="message">
             {displayMessage && <div>Break time. Next session starts in: </div>}
         </div>
-        <div className="timer">{warda && <div>Shut up Warda</div>}<div>{timerMinutes}:{timerSeconds}</div></div>
+        <div className="timer">{shutup && <div>Shut up Warda</div>}<div>{timerMinutes}:{timerSeconds}</div></div>
     </div>
 }
 
