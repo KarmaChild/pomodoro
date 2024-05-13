@@ -40,7 +40,7 @@ const Pomodoro = () => {
         <div className="message">
             {displayMessage && <div>Break time. Next session starts in: </div>}
         </div>
-        <div className="timer">{shutup && <div>Shut up Warda</div>}<div>{timerMinutes}:{timerSeconds}</div></div>
+        <div className="timer">{shutup && <div>Shut up</div>}<div>{timerMinutes}:{timerSeconds}</div></div>
     </div>
 }
 
